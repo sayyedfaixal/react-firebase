@@ -6,6 +6,8 @@ import "react-toastify/dist/ReactToastify.css";
 import LoginAsVolunteer from "./Component/LoginAsVolunteer";
 import LoginAsAdmin from "./Component/LoginAsAdmin";
 import { Route, Routes } from "react-router-dom";
+import AdminSignUp from "./Component/AdminSignUp";
+import Login from "./Component/Login";
 function App() {
   return (
     <>
@@ -13,6 +15,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/volunteer" element={<LoginAsVolunteer />} />
+        <Route path="/adminSignup" element={<AdminSignUp />} />
+        <Route path="/adminLogin" element={<Login />} />
         <Route path="/admin" element={<LoginAsAdmin />} />
       </Routes>
     </>

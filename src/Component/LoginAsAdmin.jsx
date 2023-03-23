@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import Table from 'react-bootstrap/Table';
 import { getDatabase, ref, onValue} from "firebase/database";
+import Spinner from 'react-bootstrap/Spinner';
 
 const LoginAsAdmin = () => {
-  const data = [
+  // Classroom data
+  /*const data = [
     {
       id: 1,
       classroomID: "AHM01",
@@ -58,9 +60,10 @@ const LoginAsAdmin = () => {
       languageRequirement: [],
       location: "Bengaluru",
     },
-  ];
+  ]; */
 
   const [fireBaseData, setFireBaseData] = useState({});
+  const [isLoading, setLoading] = useState(true);
 
   useEffect(()=>{
     const db = getDatabase();
@@ -71,67 +74,49 @@ const LoginAsAdmin = () => {
       }else{
         setFireBaseData({})
       }
-      console.log(data)
     })
+    // setTimeout(()=>{
+      setLoading(false)
+    // }, 500)
   }, [])
 
-  // debugger;
-  // const tableRows = data.map(({id, classroomID, capacity, requirement, subjects, languageRequirement, location})=>{
-  //   return (
-  //     <tr key={id}>
-  //       <td>{id}</td>
-  //       <td>{classroomID}</td>
-  //       <td>{capacity}</td>
-  //       <td>{requirement}</td>
-  //       <td>{subjects + ' '}</td>
-  //       <td>{languageRequirement + ' '}</td>
-  //       <td>{location}</td>
-  //     </tr>
-  //   )
-  // })
-  // const tableRows = data.
 
   return (
+    <>
+    {isLoading ?
+    <Spinner animation="border" variant="info"  size='lg'/> :
     <Table striped bordered hover size = "sm" className='table-responsive'>
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Locaiton</th>
-          <th>Language</th>
-          <th>Subject</th>
-          <th>Date</th>
-        </tr>
-      </thead>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Locaiton</th>
+        <th>Language</th>
+        <th>Subject</th>
+        <th>Date</th>
+      </tr>
+    </thead>
 
-      <tbody>
-        {/* {tableRows} */}
-        {
-           Object.keys(fireBaseData).map( (id, index) =>{
-                return (
-                  <tr  key={id}>
-                      <th scope='row'>{index +1}</th>
-                      <td>{fireBaseData[id].name}</td>
-                      <td>{fireBaseData[id].email}</td>
-                      <td>{fireBaseData[id].loc}</td>
-                      <td>{fireBaseData[id].language}</td>
-                      <td>{fireBaseData[id].subject}</td>
-                      <td>{fireBaseData[id].date}</td>
-                  </tr>
-              )}
-          )
-        }
-      </tbody>
-    </Table>
+    <tbody>
+         {Object.keys(fireBaseData).map( (id, index) =>{
+              return (
+                <tr  key={id}>
+                    <th scope='row'>{index +1}</th>
+                    <td>{fireBaseData[id].name}</td>
+                    <td>{fireBaseData[id].email}</td>
+                    <td>{fireBaseData[id].loc}</td>
+                    <td>{fireBaseData[id].language}</td>
+                    <td>{fireBaseData[id].subject}</td>
+                    <td>{fireBaseData[id].date}</td>
+                </tr>
+            )}
+        )
+      }
+    </tbody>
+  </Table> }
 
-// classroomID: "AHM01",
-// capacity: 5,
-// requirement: 2,
-// subjects: ["Maths", "Science"],
-// languageRequirement: ["Gujarati", "Hindi"],
-// location
-
+    </>
   );
 }
 

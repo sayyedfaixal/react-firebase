@@ -9,7 +9,7 @@ const Home = () => {
     <>
     <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="/">Teach For India</Navbar.Brand>
+          <Navbar.Brand>Teach For India</Navbar.Brand>
         </Container>
       </Navbar>
       <Container className='d-flex justify-around'>
@@ -23,7 +23,7 @@ const Home = () => {
         </div>
         <div>
           <h3 className='mt-20'>Login as Admin</h3>
-          <Link to="/admin">
+          <Link to="/adminLogin">
           <Button variant="outline-info" >Login</Button>
           </Link>
         </div>
@@ -36,11 +36,3 @@ const Home = () => {
 }
 
 export default Home
-    //   <Routes>
-    //   <Route path='/' element={<Home />} />
-    //   <Route path='/login' element={<Login />} />
-    //   <Route path='/details' element={<Details />} />
-    //   <Route path='*' element={<Errror />} />
-    // </Routes>
-    // Add route to the buttons
-    // Create a page for each role
