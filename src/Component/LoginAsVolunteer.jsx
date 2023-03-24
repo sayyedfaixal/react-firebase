@@ -5,8 +5,11 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom'
 import fireDb from "../firebaseConfig"
-
-
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import HomeCss from "./Home.module.css"
+import Container from 'react-bootstrap/Container';
+import Quote from './Quote';
 
 const LoginAsVolunteer = () => {
   const [inputVal, setInputVal] = useState({
@@ -30,10 +33,13 @@ const LoginAsVolunteer = () => {
   })
   }
 
+  const goBack =()=>{
+    history("/")
+  }
+
   // Validating and Storing the data into the firebaseDb
   const addData = (e) => {
     e.preventDefault();
-    // debugger;
     const { name, email, loc, language, date, subject } = inputVal;
 
     if (name === "") {
@@ -64,7 +70,7 @@ const LoginAsVolunteer = () => {
         position: "top-center"
   })
   }else if (date === "") {
-         toast.error('Date field is requred',{
+         toast.error('Day field is requred',{
             position: "top-center",
         });
     }
@@ -85,11 +91,33 @@ const LoginAsVolunteer = () => {
 }
   return (
     <>
-    <h3 className='mt-5 ml-5'>You are applying as a volunteer @Teach For India</h3>
-    <div className='left-data ml-1'>
-    <Form className='ml-5'>
+    <Navbar bg="dark" variant="dark">
+        <Container>
+          <Navbar.Brand className={HomeCss.heading}>Teach <span className={HomeCss.headingFor}>For</span> India</Navbar.Brand>
+          <Nav className="justify-content-end" activeKey="/home">
+          <Nav.Item>
+              <Nav.Link disabled>Connect with us</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link className={HomeCss.navTextYt} href="https://www.youtube.com/c/TeachForIndiaOfficial" target="_blank">Youtube</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link className={HomeCss.navTextFb} href="https://www.facebook.com/teachforindia" target="_blank">Facebook</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link className={HomeCss.navTextTwitter} href="https://twitter.com/TeachForIndia" target="_blank">Twitter</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link className={HomeCss.navTextInsta} href="https://www.instagram.com/teachforindia/" target="_blank">Instagram</Nav.Link>
+            </Nav.Item>
+      </Nav>
+        </Container>
+      </Navbar>
 
-      <Form.Group className="mt-5 mb-3 col-lg-4" controlId="formBasicName">
+    <h3 className='ml-5 mt-2'>You are applying as a volunteer @Teach For India</h3>
+    <div className='left-data ml-1 mb-5'>
+    <Form className='ml-5'>
+      <Form.Group className="mt-3 mb-3 col-lg-4" controlId="formBasicName">
           <Form.Label>Enter your Name</Form.Label>
         <Form.Control  type="text" name='name' onChange={getData} placeholder="Eg: John Smith" />
         </Form.Group>
@@ -117,24 +145,26 @@ const LoginAsVolunteer = () => {
         </Form.Text>
         </Form.Group>
 
-        <Form.Group className="mb-3 col-lg-4" controlId="formBasicDate">
-          <Form.Label>Select Date</Form.Label>
-          <Form.Control  type="date" name="date"  onChange={getData} />
+        <Form.Group className="mb-3 col-lg-4" controlId="formBasicDay">
+          <Form.Label>Enter Day(s)</Form.Label>
+          <Form.Control  type="text" name="date" onChange={getData} placeholder="Eg: Saturday, Sunday" />
           <Form.Text className="text-muted">
           Which days of the week you are available to support the class
         </Form.Text>
         </Form.Group>
 
-        <Button variant="primary" className='col-lg-4'style={{ background: "#809fff" }} onClick={addData} type="submit">
+        <Button variant="primary" className='col-lg-2 col-sm-2 col-md-2 mr-2'style={{ background: "#809fff" }} onClick={addData} type="submit">
             Submit
+        </Button>
+
+        <Button variant="danger" className='col-lg-2 col-sm-2 col-md-2 ml-2' onClick={goBack} type="submit">
+            Cancel
         </Button>
       </Form>
       </div>
-
-      <div className='right-data'>
-
-      </div>
+        <Quote quote="Volunteer with us" quoteTitle="Volunteering with Teach For India allows you to work directly with Students while gaining a meaningful experience. It gives you the opportunity to learn more about yourself, others in your community, and the impact of education on our country. Volunteers make a minimum commitment of 50 hours and support a Fellow in a classroom." />
       </>
+
   );
 }
 

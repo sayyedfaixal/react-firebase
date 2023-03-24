@@ -1,6 +1,43 @@
-.img-bg{
-    background-color:rgb(69, 206, 206);
-  background-image: url(./Images/tfi.png);
-  background-repeat: no-repeat;
-  background-size: 100%;
+.navTextYt:hover{
+    background: #CF0000;
+    background: radial-gradient(circle farthest-corner at bottom left, #CF0000 0%, #CF614B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+.navTextFb:hover{
+    background: #0A9BCF;
+    background: radial-gradient(circle farthest-corner at bottom left, #0A9BCF 0%, #8442CF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+.navTextTwitter:hover{
+    background: #121FCF;
+    background: radial-gradient(circle farthest-corner at bottom left, #121FCF 0%, #44CACF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.navTextInsta:hover{
+    background: #FEDA75;
+    background: radial-gradient(circle farthest-corner at bottom left, #FEDA75 0%, #FA7E1E 35%, #D62976 34%, #962FBF 84%, #4F5BD5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.heading{
+    font-family: 'Great Vibes', cursive;
+    font-family: 'Raleway', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.headingFor{
+    color: #44CACF;
+}
+
+.upperContainer{
+    background-color: #17ebf2;
+    width: 100%;
+    height: 20vh;
 }

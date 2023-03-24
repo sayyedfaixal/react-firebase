@@ -1,0 +1,15 @@
+.bgColor{
+    background-color: #17ebf2;
+    padding: 50px 0px 50px 0px;
+}
+
+.textPaddingLeft{
+    padding-left: 2.5rem;
+}
+
+.quoteText{
+    font-weight: 300;
+    font-size: 40px;
+    color: black;
+    font-style: italic;
+}
