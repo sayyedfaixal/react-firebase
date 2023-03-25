@@ -5,8 +5,10 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom'
 import fireDb from "../firebaseConfig"
-import Quote from './Quote';
+// import Quote from './Quote';
 import NavbarComponent from './NavbarComponent';
+import { Container } from 'react-bootstrap';
+import LoginAsVolunteerCss from "./LoginAVolunteer.module.css"
 
 const LoginAsVolunteer = () => {
   const [inputVal, setInputVal] = useState({
@@ -91,7 +93,7 @@ const LoginAsVolunteer = () => {
       <NavbarComponent />
 
     <h3 className='ml-5 mt-2'>You are applying as a volunteer @Teach For India</h3>
-    <div className='left-data ml-1 mb-5'>
+    <div className='ml-1 mb-5'>
     <Form className='ml-5'>
       <Form.Group className="mt-3 mb-3 col-lg-4" controlId="formBasicName">
           <Form.Label>Enter your Name</Form.Label>
@@ -129,16 +131,24 @@ const LoginAsVolunteer = () => {
         </Form.Text>
         </Form.Group>
 
-        <Button variant="primary" className='col-lg-2 col-sm-2 col-md-2 mr-2'style={{ background: "#809fff" }} onClick={addData} type="submit">
+        <Button variant="outline-success" className='col-lg-2 col-sm-2 col-md-2 mr-2' onClick={addData} type="submit">
             Submit
         </Button>
 
-        <Button variant="danger" className='col-lg-2 col-sm-2 col-md-2 ml-2' onClick={goBack} type="submit">
+        <Button variant="outline-danger" className='col-lg-2 col-sm-2 col-md-2 ml-2' onClick={goBack} type="submit">
             Cancel
         </Button>
       </Form>
       </div>
-        <Quote quote="Volunteer with us" quoteTitle="Volunteering with Teach For India allows you to work directly with Students while gaining a meaningful experience. It gives you the opportunity to learn more about yourself, others in your community, and the impact of education on our country. Volunteers make a minimum commitment of 50 hours and support a Fellow in a classroom." />
+
+        <Container className={LoginAsVolunteerCss.rightCOntainer}>
+          <div className='ratio ratio-16x9'>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/mSHYQ3PIwAU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </Container>
+        {/* <div className={LoginAsVolunteerCss.rightCOntainer} >
+         <Quote quote="Volunteer with us" quoteTitle="Volunteering with Teach For India allows you to work directly with Students while gaining a meaningful experience. It gives you the opportunity to learn more about yourself, others in your community, and the impact of education on our country. Volunteers make a minimum commitment of 50 hours and support a Fellow in a classroom." />
+        </div> */}
       </>
 
   );
