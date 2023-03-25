@@ -28,3 +28,4 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ### Live website
 This website is deployed on netlify, you can check it here - https://teachforindia.netlify.app/
 
+>Frontend - ReactJs, Backend - Firebase (for real time database)
