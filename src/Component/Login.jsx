@@ -18,9 +18,6 @@ const Login = () => {
         password: ""
     })
 
-    const [data, setData] = useState([]);
-    console.log(inpval);
-
     const getdata = (e) => {
         const { value, name } = e.target;
         setInpval(() => {
@@ -40,7 +37,7 @@ const Login = () => {
         e.preventDefault();
 
         const getuserArr = localStorage.getItem("useryoutube");
-        console.log(getuserArr);
+        // console.log(getuserArr);
 
         const { email, password } = inpval;
         if (email === "") {
@@ -72,7 +69,7 @@ const Login = () => {
                         position: "top-center",
                     });
                 } else {
-                    console.log("user login succesfulyy");
+                    // console.log("user login succesfulyy");
                     localStorage.setItem("user_login", JSON.stringify(userlogin))
                     history("/admin")
                 }
