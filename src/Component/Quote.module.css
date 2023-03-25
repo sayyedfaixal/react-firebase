@@ -7,8 +7,15 @@
     padding-left: 2.5rem;
 }
 
-.quoteText{
-    font-weight: 300;
+.quote{
+    font-weight: bold;
+    font-size: 40px;
+    color: black;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.quoteTitle{
     font-size: 40px;
     color: black;
     font-style: italic;

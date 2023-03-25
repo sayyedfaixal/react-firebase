@@ -8,9 +8,11 @@ const Quote = ({quote, quoteTitle}) => {
                     <div className={QuoteCss.textPaddingLeft}>
                         <div>
                             <div>
-                                <div class={QuoteCss.quoteText}><strong>{quote}</strong>
-                            <br />
-                                {quoteTitle}
+                                <div class={QuoteCss.quote}>{quote}
+                                <br />
+                                </div>
+                                <div class={QuoteCss.quoteTitle}>
+                                    {quoteTitle}
                                 </div>
                             </div>
                         </div>

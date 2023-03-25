@@ -2,11 +2,13 @@ import Carousel from 'react-bootstrap/Carousel';
 import CarouselImg1 from "../Images/CarouselImg1.png"
 import CarouselImg2 from "../Images/CarouselImg2.png"
 import CarouselImg3 from "../Images/CarouselImg3.png"
+import CarouselImg4 from "../Images/CarouselImg4.png"
 function CarouselComponent() {
   return (
     <Carousel fade wrap="true">
-      <Carousel.Item interval={1000}>
+      <Carousel.Item interval={1500}>
         <img
+          style={{height: "640px"}}
           className="d-block w-100"
           src={CarouselImg1}
           alt="First slide"
@@ -17,8 +19,9 @@ function CarouselComponent() {
         </Carousel.Caption>
       </Carousel.Item>
 
-      <Carousel.Item interval={1000}>
+      <Carousel.Item interval={1500}>
         <img
+          style={{height: "640px"}}
           className="d-block w-100"
           src={CarouselImg2}
           alt="Second slide"
@@ -29,16 +32,24 @@ function CarouselComponent() {
         </Carousel.Caption>
       </Carousel.Item>
 
-      <Carousel.Item interval={1000}>
+      <Carousel.Item interval={1500}>
         <img
+          style={{height: "640px"}}
           className="d-block w-100"
           src={CarouselImg3}
           alt="Third slide"
         />
         <Carousel.Caption>
-          {/* <h3>Third slide label</h3> */}
-          <p></p>
         </Carousel.Caption>
+      </Carousel.Item>
+
+      <Carousel.Item interval={1500}>
+        <img
+          style={{height: "640px"}}
+          className="d-block w-100"
+          src={CarouselImg4}
+          alt="Second slide"
+        />
       </Carousel.Item>
 
     </Carousel>
