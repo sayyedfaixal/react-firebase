@@ -5,12 +5,9 @@ import SignInImage from './SignInImage'
 import { NavLink } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify';
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
 import 'react-toastify/dist/ReactToastify.css';
 import Quote from './Quote'
-import HomeCss from "./Home.module.css"
+import NavbarComponent from './NavbarComponent'
 
 
 const SignUp = () => {
@@ -77,28 +74,8 @@ const SignUp = () => {
 
     return (
         <>
-        <Navbar bg="dark" variant="dark">
-        <Container>
-          <Navbar.Brand className={HomeCss.heading}>Teach <span className={HomeCss.headingFor}>For</span> India</Navbar.Brand>
-          <Nav className="justify-content-end" activeKey="/home">
-            <Nav.Item>
-              <Nav.Link disabled>Connect with us</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link className={HomeCss.navTextYt} href="https://www.youtube.com/c/TeachForIndiaOfficial" target="_blank">Youtube</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link className={HomeCss.navTextFb} href="https://www.facebook.com/teachforindia" target="_blank">Facebook</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link className={HomeCss.navTextTwitter} href="https://twitter.com/TeachForIndia" target="_blank">Twitter</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link className={HomeCss.navTextInsta} href="https://www.instagram.com/teachforindia/" target="_blank">Instagram</Nav.Link>
-            </Nav.Item>
-      </Nav>
-        </Container>
-      </Navbar>
+      <NavbarComponent />
+
             <div className="container mt-3">
                 <section className='d-flex justify-content-between'>
                     <div className="left_data mt-3 p-3" style={{ width: "100%" }}>
@@ -106,16 +83,16 @@ const SignUp = () => {
                         <Form >
                             <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
 
-                                <Form.Control type="text" name='name' onChange={getdata} placeholder="Enter Your Name" />
+                            <Form.Control type="text" name='name' onChange={getdata} placeholder="Enter Your Name" />
                             </Form.Group>
                             <Form.Group className="mb-3 col-lg-6" controlId="formBasicEmail">
 
-                                <Form.Control type="email" name='email' onChange={getdata} placeholder="Enter email" />
+                            <Form.Control type="email" name='email' onChange={getdata} placeholder="Enter email" />
                             </Form.Group>
 
                             <Form.Group className="mb-3 col-lg-6" controlId="formBasicPassword">
 
-                                <Form.Control type="password" name='password' onChange={getdata} placeholder="Password" />
+                            <Form.Control type="password" name='password' onChange={getdata} placeholder="Password" />
                             </Form.Group>
                             <Button variant="outline-success" className='col-lg-6' onClick={addData} type="submit">
                                 Submit

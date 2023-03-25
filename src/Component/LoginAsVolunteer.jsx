@@ -5,11 +5,8 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom'
 import fireDb from "../firebaseConfig"
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
-import HomeCss from "./Home.module.css"
-import Container from 'react-bootstrap/Container';
 import Quote from './Quote';
+import NavbarComponent from './NavbarComponent';
 
 const LoginAsVolunteer = () => {
   const [inputVal, setInputVal] = useState({
@@ -91,28 +88,7 @@ const LoginAsVolunteer = () => {
 }
   return (
     <>
-    <Navbar bg="dark" variant="dark">
-        <Container>
-          <Navbar.Brand className={HomeCss.heading}>Teach <span className={HomeCss.headingFor}>For</span> India</Navbar.Brand>
-          <Nav className="justify-content-end" activeKey="/home">
-          <Nav.Item>
-              <Nav.Link disabled>Connect with us</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link className={HomeCss.navTextYt} href="https://www.youtube.com/c/TeachForIndiaOfficial" target="_blank">Youtube</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link className={HomeCss.navTextFb} href="https://www.facebook.com/teachforindia" target="_blank">Facebook</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link className={HomeCss.navTextTwitter} href="https://twitter.com/TeachForIndia" target="_blank">Twitter</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link className={HomeCss.navTextInsta} href="https://www.instagram.com/teachforindia/" target="_blank">Instagram</Nav.Link>
-            </Nav.Item>
-      </Nav>
-        </Container>
-      </Navbar>
+      <NavbarComponent />
 
     <h3 className='ml-5 mt-2'>You are applying as a volunteer @Teach For India</h3>
     <div className='left-data ml-1 mb-5'>

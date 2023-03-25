@@ -2,6 +2,10 @@ import React, { useEffect, useState } from 'react'
 import Table from 'react-bootstrap/Table';
 import { getDatabase, ref, onValue} from "firebase/database";
 import Spinner from 'react-bootstrap/Spinner';
+import NavbarComponent from './NavbarComponent';
+import Button from 'react-bootstrap/Button';
+import { Link } from "react-router-dom";
+
 const Admin = () => {
   // Classroom data
   /*const data = [
@@ -74,16 +78,20 @@ const Admin = () => {
         setFireBaseData({})
       }
     })
-    // setTimeout(()=>{
       setLoading(false)
-    // }, 500)
   }, [])
 
 
   return (
-    // <div className={AdminCss.adminBg}>
     <div>
-      <h3 className='mt-2 ml-2'>List of Volunteers</h3>
+      <NavbarComponent />
+
+      <div className='d-flex justify-between mr-5 mt-2'>
+      <h3>List of Volunteers</h3>
+          <Link to="/">
+              <Button variant="outline-danger" >Logout</Button>
+          </Link>
+      </div>
       {isLoading ?
       <Spinner animation="border" variant="info"  size='lg'/> :
       <Table striped bordered hover size = "sm" className='table-responsive mt-2 ml-2 mr-2' variant='dark'>
